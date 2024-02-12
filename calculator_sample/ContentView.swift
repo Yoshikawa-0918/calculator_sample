@@ -13,7 +13,7 @@ struct ContentView: View {
     @State var operand = ""     //選択された演算子を保持する変数
     @State var first = 0        //１つ目の値を保持する変数
     @State var second = 0       //2つ目の値を保持する変数
-    //Buttonで使うTextの配列
+    //Buttonで使う文字列の二重配列
     let inputItems = [["7","8","9","÷"],
                       ["4","5","6","×"],
                       ["1","2","3","-"],
@@ -23,7 +23,7 @@ struct ContentView: View {
             Color.black.ignoresSafeArea()   //SafeAreaを無視して背景を黒にする
             VStack {
                 Spacer()
-                Text(display)    //計算結果を表示するText
+                Text(display)    //入力した数字/演算子を表示するText
                     .font(.system(size: 50))
                     .foregroundStyle(.white)
                     .frame(width: 350,alignment: .trailing)
