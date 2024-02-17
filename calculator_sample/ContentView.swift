@@ -32,13 +32,13 @@ struct ContentView: View {
                     .foregroundStyle(.white)
                     .frame(width: 350,alignment: .trailing)
                 Spacer()
-                ForEach((0...3), id: \.self){row in
+                ForEach(0..<4){row in
                     HStack{
-                        ForEach((0...3), id: \.self){col in
+                        ForEach(0..<4){col in
                             if col == 3 {
                                 //演算子のボタンはオレンジ色にする
                                 Button(action: {
-                                        calculation(self.inputItems[row][col])
+                                        calculation(inputItems[row][col])
                                 }, label: {
                                     Text(self.inputItems[row][col])
                                         .font(.system(size: 35))
@@ -51,7 +51,7 @@ struct ContentView: View {
                             }else{
                                 //演算子以外のボタンは灰色にする
                                 Button(action: {
-                                        calculation(self.inputItems[row][col])
+                                        calculation(inputItems[row][col])
                                 }, label: {
                                     Text(self.inputItems[row][col])
                                         .font(.system(size: 35))
