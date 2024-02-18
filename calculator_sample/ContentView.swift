@@ -79,31 +79,7 @@ struct ContentView: View {
             }else{
                 display += inputItem
             }
-        }else if inputItem != "AC" && inputItem != "=" { //演算子かどうか判定する
-            if Int(display) != nil{   //displayが数値かどうか判定する、つまり演算子が含まれているかどうか判定している
-                first = Int(display)!
-                switch inputItem {  //演算子ごとに処理を分ける
-                case "+":
-                    display = "+"
-                    operand = "+"
-                    break
-                case "-":
-                    display = "-"
-                    operand = "-"
-                    break
-                case "×":
-                    display = "×"
-                    operand = "×"
-                    break
-                case "÷":
-                    display = "÷"
-                    operand = "÷"
-                    break
-                default:
-                    break;
-                }
-            }
-        }else{
+        }else if inputItem == "AC" || inputItem == "=" {
             if inputItem == "AC" {
                 display = "0"
                 calcResult = ""
@@ -127,6 +103,30 @@ struct ContentView: View {
                     default:
                         break;
                     }
+                }
+            }
+        }else{
+            if Int(display) != nil{   //displayが数値かどうか判定する、つまり演算子が含まれているかどうか判定している
+                first = Int(display)!
+                switch inputItem {  //演算子ごとに処理を分ける
+                case "+":
+                    display = "+"
+                    operand = "+"
+                    break
+                case "-":
+                    display = "-"
+                    operand = "-"
+                    break
+                case "×":
+                    display = "×"
+                    operand = "×"
+                    break
+                case "÷":
+                    display = "÷"
+                    operand = "÷"
+                    break
+                default:
+                    break;
                 }
             }
         }
