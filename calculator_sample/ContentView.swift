@@ -40,7 +40,7 @@ struct ContentView: View {
                                 Button(action: {
                                         calculation(inputItems[row][col])
                                 }, label: {
-                                    Text(self.inputItems[row][col])
+                                    Text(inputItems[row][col])
                                         .font(.system(size: 35))
                                         .frame(width: 70,height: 70)
                                         .foregroundStyle(.white)
@@ -53,7 +53,7 @@ struct ContentView: View {
                                 Button(action: {
                                         calculation(inputItems[row][col])
                                 }, label: {
-                                    Text(self.inputItems[row][col])
+                                    Text(inputItems[row][col])
                                         .font(.system(size: 35))
                                         .frame(width: 70,height: 70)
                                         .foregroundStyle(.white)
