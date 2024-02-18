@@ -70,13 +70,14 @@ struct ContentView: View {
     }
     func calculation(_ inputItem: String){
         if Int(inputItem) != nil {  //数値かどうか判定する
-            /*displayが初期値のままだったら書き換える
+            /*
+              displayが初期値のまま、または、演算子であれば書き換える
               そうでなかったら文字列を連結する
             */
-            if display != "0" && Int(display) != nil {
-                display += inputItem
-            }else{
+            if display == "0" || Int(display) == nil {
                 display = inputItem
+            }else{
+                display += inputItem
             }
         }else if inputItem != "AC" && inputItem != "=" { //演算子かどうか判定する
             if Int(display) != nil{   //displayが数値かどうか判定する、つまり演算子が含まれているかどうか判定している
